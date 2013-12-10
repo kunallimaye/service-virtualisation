@@ -22,6 +22,7 @@
 		<javac.source>1.6</javac.source>
 		<javac.target>1.6</javac.target>
 		<version.arquillian_core>1.1.2.Final</version.arquillian_core>
+		<jbossas-version>7.2.0.Final</jbossas-version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -38,6 +39,7 @@
 		<dependency>
 			<groupId>org.jboss.arquillian.junit</groupId>
 			<artifactId>arquillian-junit-container</artifactId>
+			<version>${version.arquillian_core}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -93,12 +95,30 @@
 	</build>
 	<profiles>
 		<profile>
-			<id>arq-jboss_as_managed_7.x</id>
+			<id>default-profile</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<build>
 				<plugins>
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<version>2.14.1</version>
+						<configuration>
+							<skipTests>true</skipTests>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>arq-jboss-managed</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
 						<configuration>
 							<systemPropertyVariables>
 								<arquillian.launch>JBOSS_AS_MANAGED_7.X</arquillian.launch>
