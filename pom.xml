@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.kunal.demo</groupId>
 	<artifactId>service-virtualisation</artifactId>
@@ -14,7 +15,8 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<!-- Java compiler plugin configured to ensure that the compiled code is JDK 6 compatible -->
+				<!-- Java compiler plugin configured to ensure that the compiled code 
+					is JDK 6 compatible -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -35,7 +37,42 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-  <modules>
-    <module>service-connect</module>
-  </modules>
+	<repositories>
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>redhat-early-access-repository</id>
+			<name>Red Hat Early access Repository</name>
+			<url>http://maven.repository.redhat.com/earlyaccess/all/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	<modules>
+		<module>service-connect</module>
+	</modules>
+	<parent>
+		<groupId>org.jboss.teiid</groupId>
+		<artifactId>teiid-parent</artifactId>
+		<version>8.6.0.CR1</version>
+	</parent>
 </project>
