@@ -11,6 +11,7 @@
 	<properties>
 		<javac.source>1.6</javac.source>
 		<javac.target>1.6</javac.target>
+		<teiid.version>8.6.0.CR1</teiid.version>
 	</properties>
 	<build>
 		<pluginManagement>
