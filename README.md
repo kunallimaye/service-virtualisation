@@ -1,8 +1,8 @@
 #Project overview#
 There are three steps to implement service virtualisation:
-1. Connect to the provider service
-2. Consume the service
-3. Expose the service to be consumed
+1.	Connect to the provider service
+2.	Consume the service
+3.	Expose the service to be consumed
 
 This is an implementation of Service Virtualisation design pattern.
 >http://soapatterns.org/candidate_patterns/service_virtualization
