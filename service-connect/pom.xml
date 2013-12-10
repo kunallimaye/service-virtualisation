@@ -7,12 +7,9 @@
     <artifactId>service-virtualisation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.kunal.demo</groupId>
   <artifactId>service-connect</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>service-connect Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <name>Service Virtualisation :: Service Connect Project</name>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
