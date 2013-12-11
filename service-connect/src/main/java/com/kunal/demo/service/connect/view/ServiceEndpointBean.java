@@ -70,7 +70,8 @@ public class ServiceEndpointBean implements Serializable
    @Inject
    private Conversation conversation;
 
-   @PersistenceContext(type = PersistenceContextType.EXTENDED)
+//   @PersistenceContext(type = PersistenceContextType.EXTENDED)
+   @Inject
    private EntityManager entityManager;
 
    public String create()
